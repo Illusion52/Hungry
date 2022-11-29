@@ -1,0 +1,300 @@
+.wrapper-cart{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    background: linear-gradient(135deg, rgba(87, 87, 87, 0.1), rgba(110, 110, 110, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0, 0.37);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 100;
+    
+    
+    
+}
+
+
+
+
+.wrapper-cart.inactive {
+    
+    opacity: 0;
+    
+    visibility: hidden;
+    display: none;
+    z-index: 0;
+}
+
+.icon-cart{
+    width: 2rem;
+    height: 2rem;
+    color: rgb(230, 25, 25);
+    margin: .5rem;
+
+}
+
+.empty-btn{
+    margin: 1rem 0;
+    text-align: center;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: .9rem;
+    font-weight: bold;
+    font-family: 'Outfit', sans-serif;
+    width: 9rem;
+    height: 3rem;
+    color: #eee;
+    background-color:rgb(230, 25, 25) ;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    box-shadow: 0px 4px 20px  rgb(201, 22, 22);
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    
+}
+
+.empty-btn:hover{
+    transition: all 1s ease-in;
+    scale: 110%;
+    background: linear-gradient(to right, rgb(230, 25, 25) , rgba(104, 13, 13, 0.507));
+    box-shadow: 0px 4px 20px  rgb(163, 11, 11)
+}
+
+.icon-cart:hover{
+    transition: all 0.2s ease-in;
+    scale: 95%;
+    color: rgb(185, 20, 20);
+    
+}
+
+.cartCount{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    opacity: 100;
+    visibility: visible;
+}
+
+.cartCount.active{
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.cart-container{
+    background-color: rgba(0,0,0,.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0, 0.37);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 650px;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+}
+
+.cart-container.inactive{
+    display: none;
+    opacity: 0;
+}
+
+/* Cart items */
+
+.item-wrapper{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: .6rem;
+    background-color: rgba(167, 10, 10, 0.719);
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 1rem 0;
+    border: none;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+}
+
+.ItemText-wrapper{
+    max-width: 300px;
+    width: 300px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+
+.ItemText-wrapper h1{
+    color: #eee;
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+}
+
+.ItemText-wrapper h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(202, 37, 37);
+    background-color: #eee;
+    font-size: 1.3rem;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.cart-imgs{
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border: none;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.delete-btn{
+    margin: 1rem 0;
+    text-align: center;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Outfit', sans-serif;
+    width: 3rem;
+    height: 3rem;
+    color: #eee;
+    background-color:rgb(230, 25, 25) ;
+    border-radius: 50px;
+    box-shadow: 0px 4px 20px  rgb(201, 22, 22);
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+
+.delete-btn:hover{
+    transition: all 1s ease-in;
+    scale: 110%;
+    background: linear-gradient(to right, rgb(230, 25, 25) , rgba(104, 13, 13, 0.507));
+    box-shadow: 0px 4px 20px  rgb(163, 11, 11)
+}
+
+.total-amount{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    margin-right: 30px;
+    color: #eee;
+    font-size: .7rem;
+    
+
+}
+
+.quantity-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    font-size: 4rem;
+    margin-top: 25px;
+    outline: none;
+    color: #eee;
+    background-color: transparent;
+    border: none;
+}
+
+.quantity-btn:hover{
+    transition: all 0.3s ease-in-out;
+    scale: 90%;
+    color: rgb(207, 206, 206);
+}
+
+.checkout-wrapper{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    background-color: transparent;
+    bottom: 0;
+    width: 90%;
+    height: 80px;
+    z-index: 10;
+}
+
+.checkout-wrapper button{
+    margin: 1rem 0;
+    text-align: center;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: 'Outfit', sans-serif;
+    width: 12rem;
+    height: 3rem;
+    color: #eee;
+    background-color:rgb(230, 25, 25) ;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    box-shadow: 0px 4px 20px  rgb(201, 22, 22);
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+
+.checkout-wrapper button:hover{
+    transition: all 1s ease-in;
+    scale: 110%;
+    background: linear-gradient(to right, rgb(230, 25, 25) , rgba(104, 13, 13, 0.507));
+    box-shadow: 0px 4px 20px  rgb(163, 11, 11)
+}
+
+.checkout-wrapper h1{
+    color: #eee;
+    font-size: 1.5rem;
+    text-align: right;
+    text-decoration: none;
+
+
+}
+.checkout-wrapper span{
+    color: rgb(230, 25, 25);
+}
+
+@media screen and (max-width:1240px){
+    .cart-container{
+        padding: 1rem;
+        max-width: 1240px;
+        width: 100%;
+    }
+}
