@@ -79,18 +79,11 @@ const Cart = () => {
 										<div className="ItemText-wrapper">
 											<h1>{item.name}</h1>
 
-											<div
-												style={{
-													display: 'flex',
-													justifyContent: 'space-around',
-													Width: '200px',
-													gap: '65px',
-												}}
-											>
+											<div className="price-div">
 												<h2>
 													${parseInt(item.price) * parseInt(item.cartQuantity)}
 												</h2>
-												<div style={{ display: 'flex' }}>
+												<div className="quantity-wrapper">
 													<button
 														className="quantity-btn"
 														onClick={() => onDecreaseQTY(item)}
