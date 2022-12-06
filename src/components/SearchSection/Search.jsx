@@ -53,8 +53,8 @@ const Search = () => {
 						return false;
 					}).map((val, i) => {
 						return (
-							<Link to={`/menu/${val.id}`} className="Link">
-								<div className="items-container" key={i}>
+							<Link to={`/menu/${val.id}`} className="Link" key={i}>
+								<div className="items-container">
 									<div className="image-container">
 										<img src={val.img} alt={val.name} className="items-img" />
 									</div>
