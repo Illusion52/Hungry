@@ -11,6 +11,12 @@
     
 }
 
+.burgerCard Link{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
 .containerTitle{
     color: #eee;
     font-family: 'Outfit', sans-serif;
@@ -43,9 +49,9 @@
     align-items:left;
     transition: all 0.5s ease-in-out;
     
-    justify-content: center;
+    justify-content: space-between;
     width: 400px;
-    height: 400px;
+    height: 360px;
     padding: 0;
     color: #eee;
     background-color: rgba(46, 46, 46, 0.418);
@@ -77,6 +83,7 @@
     box-shadow: 0px 4px 20px  rgb(201, 22, 22);
     transition: all 0.3s ease-in-out;
     outline: none;
+    cursor: pointer;
 }
 
 .burgerCard h1{

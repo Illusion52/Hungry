@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { useDispatch } from 'react-redux/es/exports';
-
-import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux/es/exports';
+import { selectTotalQTY } from '../../app/CartSlice';
+import { useState } from 'react';
 import {
 	FaGlassMartiniAlt,
 	FaTimes,
@@ -12,7 +13,10 @@ import {
 	FaSearch,
 } from 'react-icons/fa';
 import { setOpenCart } from '../../app/CartSlice';
+
+import { setOpenSearch } from '../../app/SearchSlice.js';
 import Cart from '../CartSection/Cart';
+import Search from '../SearchSection/Search';
 
 const Navbar = () => {
 	const [click, setClick] = useState(false);
@@ -36,9 +40,15 @@ const Navbar = () => {
 		dispatch(setOpenCart({ cartState: true }));
 	};
 
+	const onSearchToggle = () => {
+		dispatch(setOpenSearch({ searchState: true }));
+	};
+
+	const totalQTY = useSelector(selectTotalQTY);
 	return (
 		<>
 			<Cart />
+			<Search />
 			<nav className={color ? 'nav-container bg' : 'nav-container'}>
 				<div className="nav-menu">
 					<div className="nav-logo">
@@ -63,11 +73,14 @@ const Navbar = () => {
 						</li>
 					</ul>
 					<div className="btn-wrapper">
-						<button className="nav-btn" onClick={onCartToggle}>
+						<button className="nav-btn one" onClick={onCartToggle}>
 							<FaShoppingBag className="icons" />
+							<div className={totalQTY <= 0 ? 'totalQTY inactive' : 'totalQTY'}>
+								{totalQTY}
+							</div>
 						</button>
 						<button className="nav-btn">
-							<FaSearch className="icons" />
+							<FaSearch className="icons" onClick={onSearchToggle} />
 						</button>
 					</div>
 					<div className="hamburger" onClick={handleClick}>

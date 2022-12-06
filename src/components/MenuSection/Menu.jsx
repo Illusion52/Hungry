@@ -1,9 +1,8 @@
 import React from 'react';
-import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux/es/exports';
 import './Menu.css';
-import { Link } from 'react-router-dom';
+
 import { setAddItemToCart } from '../../app/CartSlice.js';
 
 const Menu = ({ endpoint }) => {
@@ -21,11 +20,18 @@ const Menu = ({ endpoint }) => {
 			<div className="menuGrid">
 				{endpoint.map((item, i) => {
 					return (
-						<>
-							<div className="burgerCard" id={item.id} key={i}>
-								<img src={item.img} alt={item.name} className="burger-img" />
-								<h1>{item.name}</h1>
-								<h2>{item.ingredients}</h2>
+						<div key={i}>
+							<div className="burgerCard" id={item.id}>
+								<Link to={`/menu/${item.id}`}>
+									<img
+										src={item.img}
+										alt={item.name}
+										className="burger-img"
+										key={i}
+									/>
+									<h1>{item.name}</h1>
+									<h2>{item.ingredients.join(', ')};</h2>
+								</Link>
 								<button
 									className="menu-btn"
 									id={item.id}
@@ -34,7 +40,7 @@ const Menu = ({ endpoint }) => {
 									${item.price}
 								</button>
 							</div>
-						</>
+						</div>
 					);
 				})}
 			</div>

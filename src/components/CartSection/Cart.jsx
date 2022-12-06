@@ -46,8 +46,6 @@ const Cart = () => {
 		dispatch(setDecreaseItemQTY(cartItems));
 	};
 
-	console.log(cartItems);
-
 	return (
 		<>
 			<div className={ifCartState ? 'wrapper-cart' : 'wrapper-cart inactive'}>
@@ -68,7 +66,7 @@ const Cart = () => {
 						>
 							{cartItems?.map((item, i) => {
 								return (
-									<div className="item-wrapper">
+									<div className="item-wrapper" key={i}>
 										<div style={{ height: '150px' }}>
 											<img
 												src={item.img}

@@ -1,19 +1,16 @@
 import React from 'react'
-
 import Footer from '../components/FooterSection/Footer'
-import Hero from '../components/HeroSection/Hero'
 import Navbar from '../components/NavbarSection/Navbar'
+import Specials from '../components/OffersSection/Specials'
 
-
-const Home = () => {
+const Offers = () => {
   return (
     <>
-        <Navbar />
-        
-        <Hero />
+        <Navbar/>
+        <Specials/>
         <Footer/>
     </>
   )
 }
 
-export default Home
+export default Offers

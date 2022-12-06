@@ -1,36 +1,62 @@
-import React, { Component } from 'react';
-import { AiFillCaretLeft } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import './Burger.css';
-import { useDispatch } from 'react-redux/es/exports';
-import Burger from '../../utils/burgers.json';
+import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import BurgerList from '../../utils/burgers.js';
+import { AiOutlineLeft } from 'react-icons/ai';
+import { HiOutlineShoppingBag } from 'react-icons/hi';
+import Navbar from '../NavbarSection/Navbar';
+import Footer from '../FooterSection/Footer';
+import { setAddItemToCart } from '../../app/CartSlice.js';
+import { Link } from 'react-router-dom';
 
-export class BurgerTemp extends Component {
-	render() {
-		return (
+const BurgerTemp = () => {
+	const { id } = useParams();
+	const item = BurgerList.find((item) => item.id === parseInt(id));
+
+	const { name, img, price, ingredients, description } = item;
+
+	const dispatch = useDispatch();
+
+	const handleAddToCart = (item) => {
+		dispatch(setAddItemToCart(item));
+	};
+
+	return (
+		<>
+			<Navbar />
 			<div className="burger-container">
 				<div className="left">
-					<img src={this.props.src} alt="" className="img-burger" />
+					<img src={img} alt={name} className="img-burger" />
+					<h1 className="price">${price}</h1>
 				</div>
 				<div className="right">
-					<h1>{this.props.name}</h1>
-					<h2>{this.props.description}</h2>
-					<h3>Ingredients: {this.props.ingredients.toString()}</h3>
+					<h1 className="title">{name}</h1>
+					<h2 className="description">
+						Description:{' '}
+						{description === 'N/A' ? 'No description yet' : description}
+					</h2>
+					<h3 className="ingredients">
+						Ingredients: {ingredients.join(', ')}.
+					</h3>
 					<div className="btnWrapper">
 						<Link to="/menu">
-							<button type="button" className="btn-back">
-								<AiFillCaretLeft className="btn-icon" />
+							<button className="btn-back">
+								<AiOutlineLeft />
 							</button>
 						</Link>
-						<button type="button" className="addCart-btn">
-							Add to cart for:
-							<span className="price">{this.props.price}!</span>
+						<button
+							className="addCart-btn"
+							onClick={() => handleAddToCart(item)}
+						>
+							Add to <HiOutlineShoppingBag />
 						</button>
 					</div>
 				</div>
 			</div>
-		);
-	}
-}
+			<Footer />
+		</>
+	);
+};
 
 export default BurgerTemp;

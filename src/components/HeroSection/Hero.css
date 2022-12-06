@@ -68,6 +68,7 @@
     box-shadow: 0px 4px 20px  rgb(201, 22, 22);
     transition: all 0.3s ease-in-out;
     outline: none;
+    cursor: pointer;
     
 }
 

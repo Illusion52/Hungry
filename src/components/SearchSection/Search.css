@@ -1,0 +1,129 @@
+
+.search-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right:0;
+    top: -10px;
+    margin: 0;
+    width: 500px;
+    height: 101vh;
+    background-color: rgba(0,0,0,.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0, 0.37);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 1000;
+    overflow-y: scroll;
+    
+}
+
+.search-container.inactive{
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.input-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 400px;
+    
+    position: absolute;
+    top: 0;
+    margin: 0;
+    margin-top: 50px;
+}
+
+.search-input{
+    width: 250px;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+    border-top-left-radius: 0px;
+    padding: 0 .5rem;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    background-color: rgb(70, 1, 1);
+    font-size: 1.2rem;
+    color: #eee;
+    outline: none;
+    
+}
+
+.search-input:hover{
+    scale: 105%;
+    background-color: rgb(95, 1, 1);
+}
+
+.search-items{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 120px;
+}
+
+
+.items-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 1rem;
+    height: 120px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(196, 196, 196, 0.178);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.items-container:hover{
+    scale: 105%;
+    background-color: rgba(138, 4, 4, 0.342);
+}
+
+.Link{
+    width: 100%;
+}
+
+.items-img{
+    width: 130px;
+    height: 120px;
+    object-fit: cover;
+    border: none;
+    border-radius: 10px;
+}
+.image-container {
+    height: 120px;
+    flex: 1;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.items-name{
+    font-size: 1.2rem;
+    color: #eee;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.name-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    text-align: center;
+}
+
